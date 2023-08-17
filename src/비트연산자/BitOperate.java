@@ -17,6 +17,6 @@ public class BitOperate {
         System.out.println(num1 << 1); //왼쪽으로 한비트 이동하면 *2의 값
         System.out.println(num1 >> 1); //오른쪽으로 한비트 이동하면 /2의 값
         System.out.println(num1 >> 1); //연습ㅇㅇㅇㅇ
-
+//하하하하이게무슨일이야
     }
 }
