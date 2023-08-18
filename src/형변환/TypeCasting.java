@@ -15,5 +15,7 @@ public class TypeCasting {
         int total = Integer.parseInt(kor) + mat + eng;
         double avg = (double) total / 3; //int를 double로 바꿔줘야 avg 값 제대로 나옴
         System.out.println(avg);
+
+        //
     }
 }
