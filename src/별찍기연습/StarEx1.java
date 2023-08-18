@@ -22,10 +22,10 @@ public class StarEx1 {
         System.out.print("별 개수 입력 : ");
         int n = sc.nextInt();
         for (int i = 0; i < n; i++) {
-            for (int j = 0; j < i ; j++) {
+            for (int j = 0; j < i+1 ; j++) {
                 System.out.print("* ");
             }
-            System.out.println("* ");
+            System.out.println();
         }
     }
 }
