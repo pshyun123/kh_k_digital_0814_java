@@ -25,3 +25,4 @@ public class IntegerEX {
     }
 }
 //이걸 삼항연산자로 표현하면 어떻게 할 수 있을까?
+//00

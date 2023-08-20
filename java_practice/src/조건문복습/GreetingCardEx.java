@@ -65,7 +65,7 @@ public class GreetingCardEx {
         System.out.println("시간 : " + time + "분");
 
 
-
+//00
 
 
 

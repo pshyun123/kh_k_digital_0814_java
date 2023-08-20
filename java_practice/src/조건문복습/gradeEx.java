@@ -21,5 +21,6 @@ public class gradeEx {
             else if (a >= 60) System.out.println("D");
             else System.out.println("F");
         } else System.out.println("잘 못 입력하셨습니다.");
+        //00
     }
 }
