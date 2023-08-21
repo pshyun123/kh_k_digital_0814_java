@@ -18,8 +18,12 @@ public class while문 {
             sum += i;
         }
         System.out.println("주어진 정수의 합 : " + sum);
-    }
-}
-//10 = 0+0
+// 10 = 0+0
 //19 = 10+9
 //27 = 19+8
+
+
+
+    }
+}
+
