@@ -17,3 +17,4 @@ public class Restrictor {
         System.out.println("인천에 대한 메소드입니다.");
     }
 }
+//00

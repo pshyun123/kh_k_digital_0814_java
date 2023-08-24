@@ -10,3 +10,4 @@ public class Parent {
         addr = "서울시 강남구";
     }
 }
+//00

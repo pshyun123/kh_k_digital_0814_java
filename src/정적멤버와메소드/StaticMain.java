@@ -15,3 +15,4 @@ public class StaticMain {
 
     }
 }
+//00

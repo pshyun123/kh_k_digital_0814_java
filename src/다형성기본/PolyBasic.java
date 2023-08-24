@@ -16,3 +16,4 @@ public class PolyBasic {//클래스이름과 파일이름이 같아야,자바에
     }
 }
 
+//00

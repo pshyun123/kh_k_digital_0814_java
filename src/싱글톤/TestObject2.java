@@ -11,3 +11,4 @@ public class TestObject2 {
         System.out.println("아이디 : "+ single.id);
     }
 }
+//00

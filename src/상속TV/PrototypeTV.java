@@ -23,3 +23,4 @@ public class PrototypeTV {
         } else System.out.println("채널 설정 범위가 아닙니다.");
     }
 }
+//00

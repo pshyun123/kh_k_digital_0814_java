@@ -15,3 +15,4 @@ public class Child extends Parent {
         System.out.println("상속받아 재정의한 메소드");
     }
 }
+//00

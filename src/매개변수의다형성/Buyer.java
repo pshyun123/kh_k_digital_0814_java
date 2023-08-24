@@ -13,3 +13,4 @@ public class Buyer {
         System.out.println("포인트 : " + bonusPoint);
     }
 }
+//00

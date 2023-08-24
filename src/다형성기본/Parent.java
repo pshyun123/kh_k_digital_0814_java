@@ -7,3 +7,4 @@ public class Parent {
         System.out.println("부모 클래스 메소드");
     }
 }
+//00
