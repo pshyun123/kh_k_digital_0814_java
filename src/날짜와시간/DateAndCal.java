@@ -62,4 +62,3 @@ public class DateAndCal {
     //02 찍어주는 이유? -> 시 분 초 앞에 두자리 받겠다는 의미
         }
     }
-}
