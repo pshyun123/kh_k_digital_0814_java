@@ -21,8 +21,23 @@ public class CommandHistory {
                 } else if (cmd.equalsIgnoreCase("help")){
                     System.out.println("help - 도움말 보기");
                     System.out.println("Q/q = 프로그램 종료");
-                    System.out.println("history - 최근 입력한 명령어를" + MAX_SIZE + "개 보여줍니다.");
+                    System.out.println("history - 최근 입력한 명령어를 " + MAX_SIZE + "개 보여줍니다.");
+                }else if(cmd.equalsIgnoreCase("history")){
+                    history.save(cmd);
+                    int cnt = 0;
+                    for(String e : history.queue) {
+                        cnt++;
+                        System.out.println(cnt + " " + e);//카운트 하는 숫자 넣고 공백넣고
+                    }
+                } else {
+                    history.save(cmd);
+                    System.out.println(cmd);
                 }
             }
+    }
+    void save(String cmd) {
+        queue.offer(cmd);
+        if (queue.size() > MAX_SIZE) queue.remove();//큐의 사이즈가 정한 MAX_SIZE보다 크면 맨 앞의 요소 제거함
+
     }
 }
