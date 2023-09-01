@@ -61,7 +61,6 @@ class CustomTread extends Thread{ //부모 클래스 상속----1번
     System.out.println(Thread.currentThread() + "합 : " + sum);
     }
 }
-
 //상속관계가 필요하다면 러너블로
 class InterThred implements Runnable{//----3번
 //Runnable 인터페이스 상속은 여러개 무한대로 받을 수 있음 제약사항 없음
