@@ -1,15 +1,12 @@
-package 스트링예제2;
+package 스트림예제2;
 // 반복자 스트림 forEach() : 내부 반복자, 스트림 요소에 대한 순차 접근을 제공하며, 최종 연산에 해당 함.
 // 스트링을 이용해서 모두가 편차없는 공통적인 코드를 만들 수 있다.
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Iterator;
 import java.util.List;
 import java.util.stream.IntStream;
 
-public class StringEx2 {
+public class StreamEx2 {
     public static void main(String[] args) {
 //        //1. 기존 향상된 for문 (추천!)
 //        ArrayList<String> list = new ArrayList<>(Arrays.asList("고유림", "나희도", "백이진"));
