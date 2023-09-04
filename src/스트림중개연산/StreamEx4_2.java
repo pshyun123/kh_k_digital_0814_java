@@ -12,12 +12,14 @@ public class StreamEx4_2 {
         IntStream stream1 = IntStream.of(7,5,5,2,1,2,3,4,5,6);
         IntStream stream2 = IntStream.of(7,5,5,2,1,2,3,4,5,6);
 
+        //map() 사용, ??
         Stream<String> stream = Stream.of("HTML","CSS","JAVA", "JAVASCRIPT");
         stream.map(String::length).forEach(e -> System.out.print(e + " ")); // 여러개의 값 형변환 e -> e.length() == String::length
         System.out.println();
 
-//        Stream <String> stream4 = Stream.of("I study hard", "You study JAVA", "I am hungry");
-//        stream4.flatMap(e-> Stream.of(e.split(" +"))).forEach(System.out::println);
+        //flatMap() 사용, 세덩어리로 쪼개고 공백기준으로 다시 나눔.
+        Stream <String> stream4 = Stream.of("I study hard", "You study JAVA", "I am hungry");
+        stream4.flatMap(e-> Stream.of(e.split(" +"))).forEach(System.out::println);
 
     }
 }
