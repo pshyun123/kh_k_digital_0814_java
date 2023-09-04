@@ -19,7 +19,8 @@ public class StreamEx1 {
 //        list.stream().filter(s ->s % 2 == 0 ).forEach(e -> System.out.println(e + " ")); // 짝수
         // list.stream() : 스트림 생성(1회용, 생성 후 소멸)
         //1~10. e는 도출한 짝수 값만 찍어
-        int sumVal = list.stream().mapToInt(e -> e).sum(); // int값으로 1~10을 구하기 //mapToInt(e, int 스트림으로 변환)
+        int sumVal = list.stream().mapToInt(e -> e).sum();
+        // int값으로 1~10을 구하기 //mapToInt(e, int 스트림으로 변환)
         //sum()은 최종 연산이라 끝남
         int count = list.size();
         System.out.println("함계 : " + sumVal);

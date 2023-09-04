@@ -18,7 +18,7 @@ public class StreamEx2 {
 //            String name = iterator.next();
 //            System.out.println(name + " ");
 //
-//        //3. steam-
+//        //3. steam (추천!)
 //            list.forEach(e -> System.out.print(e + " "));
 //        }
 
