@@ -18,5 +18,6 @@ public class FileStreamRead {
             System.out.println(line);
             // System.in 생성자, 표준 입력에서부터 읽으세요.
         }
+
     }
 }

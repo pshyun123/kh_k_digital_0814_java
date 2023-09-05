@@ -1,6 +1,4 @@
-package 해시맵메뉴판;
-
-import java.util.Map;
+package 커피메뉴만들기;
 
 public class MenuInfo {
     String name;      //메뉴명

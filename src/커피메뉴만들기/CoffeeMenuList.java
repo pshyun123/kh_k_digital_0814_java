@@ -1,5 +1,6 @@
-package 해시맵메뉴판;
+package 커피메뉴만들기;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -92,8 +93,6 @@ public class CoffeeMenuList {
                 }
                     break;
                 case 6 :
-
-
                     System.out.println("메뉴 종료");
                     System.exit(0); //해줘도 가능(강제종료) ,return;도 같음
                 default:System.out.println("선택하신 메뉴가 없습니다.");
@@ -101,6 +100,10 @@ public class CoffeeMenuList {
         }
     }
 }
+
+
+
+
 //CRUD :Create(생성), Read(읽기), Update(갱신), Delete(삭제)
 //오라클 DB 사용해서 추석전 프로젝트 사용
 //DB의 특성 : 영속성, 무결성
