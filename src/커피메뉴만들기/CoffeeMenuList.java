@@ -31,7 +31,7 @@ public class CoffeeMenuList {
             int selMenu = sc.nextInt();
             switch (selMenu) {
                 case 1:
-                    //향상된 for문 사용
+                    // map에서 key 가져와서 향상된 for문 수행
                     System.out.println("=".repeat(10) + "메뉴 보기" + "=".repeat(10));
                     for (String e : map.keySet()) {
                         System.out.println("메뉴 : " + map.get(e).getName());
@@ -94,16 +94,16 @@ public class CoffeeMenuList {
                     }
                     break;
                 case 6:
-                    System.out.println("메뉴 종료"); // 메뉴종료되면 실행되어야 함.!!! 강제 종료 구문 없애고.
+                    System.out.println("메뉴 종료");
+                    // 추가 > 메뉴 종료 시 직렬화, 메뉴종료되면 실행되도록 여기에 넣어주자!!! 강제 종료 구문 없애고.
                     FileOutputStream fos = null;
                     ObjectOutputStream oos = null;
                     try {
                         fos = new FileOutputStream("src/커피메뉴만들기/coffee.bin");
                         oos = new ObjectOutputStream(fos);
-                        oos.writeObject(map);// 최상단
-                        oos.flush();
-                        oos.close();
-                        fos.close();
+                        oos.writeObject(map);// 객체를 직렬화해서 파일에 저장하기
+                        oos.flush(); // 버퍼지우기
+                        oos.close(); // 출력을 위한 스트림의 자원 반납하고 닫기
                     } catch (IOException e) {
                     }
                     return; //종료해준다. break; 는 안됨. while 안에 있어서

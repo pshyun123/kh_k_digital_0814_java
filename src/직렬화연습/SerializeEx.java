@@ -41,7 +41,7 @@ public class SerializeEx implements Serializable {
     public static List<Board> readList() {
         try {
             FileInputStream fis = new FileInputStream("board.db");
-            ObjectInputStream ois = new ObjectInputStream(fis);// 역질렬화
+            ObjectInputStream ois = new ObjectInputStream(fis);// 역직렬화
             List<Board> list = (List<Board>) ois.readObject();
             return list;
         } catch (IOException e) {

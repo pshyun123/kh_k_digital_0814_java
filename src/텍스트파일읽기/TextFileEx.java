@@ -15,23 +15,28 @@ public class TextFileEx {
         FileInputStream fis = new FileInputStream("src/텍스트파일읽기/Score.txt"); // 파일 읽기
         Scanner sc = new Scanner(fis);// 스캐너 생성
 
-        //public static void main(String[] args) {
-        //try {
-        //inputStream = new FileInputStream("src/텍스트파일읽기/Score.txt");
-        //}catch(FileNotFoundException e) {
-        //System.out.println("읽을 페이지를 찾지 못했습니다");
+
+//        public static void main(String[] args) {
+//        FileInputStream inputStream = null;
+//
+//        try {
+//       inputStream = new FileInputStream("src/텍스트파일읽기/Score.txt");
+//        } catch(FileNotFoundException e) {
+//        System.out.println("읽을 페이지를 찾지 못했습니다");
+//        Scanner sc = new Scanner(inputStream);
+//        TreeSet<Student> treeSet = new TreeSet<>();
 
         while (sc.hasNext()) { //sc.hasNextLine() 과 동일한 결과 값 나옴
             String[] lineSplit = sc.nextLine().split(" "); //treeSet으로 공백을 기준으로 잘라서 배열에 넣어줌
-            treeSet.add(new Student(lineSplit[0],
-                    Integer.parseInt(lineSplit[1]),
-                    Integer.parseInt(lineSplit[2]),
-                    Integer.parseInt(lineSplit[3]))); //이전
-
 //            treeSet.add(new Student(lineSplit[0],
 //                    Integer.parseInt(lineSplit[1]),
-//                    +Integer.parseInt(lineSplit[2]),
-//                    +Integer.parseInt(lineSplit[3]))); //선생님
+//                    Integer.parseInt(lineSplit[2]),
+//                    Integer.parseInt(lineSplit[3]))); //이전
+
+            treeSet.add(new Student(lineSplit[0],
+                    Integer.parseInt(lineSplit[1]),
+                    +Integer.parseInt(lineSplit[2]),
+                    +Integer.parseInt(lineSplit[3]))); //선생님
         }
 
         for (Student e : treeSet) { // 향상된 for문 활용하여
