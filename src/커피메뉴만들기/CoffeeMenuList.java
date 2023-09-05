@@ -1,20 +1,21 @@
 package 커피메뉴만들기;
 
-import java.io.Serializable;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import 직렬화연습.Board;
+
+import java.io.*;
+import java.util.*;
 
 //HashMap으로 커피 메뉴 리스트 만들기
 public class CoffeeMenuList {
 
     //문자열로 만들어진 키와 커피의 여러가지 정보가 포함된 객체를 값으로 사용
     static Map<String, MenuInfo> map = new HashMap<>();//키값 하나로 클래스의 객체를 데려오자.
-    public static void main(String[] args) {
 
+    public static void main(String[] args) {
         makeMenu(); //같은 클래스 안에서는 이름 생략가능. CoffeeMenuList.makeMenu();
         selectMenu();
     }
+
     static void makeMenu() {
         map.put("Americano", new MenuInfo("Americano", 2500, "Coffee", "기본커피"));
         map.put("Espresso", new MenuInfo("Espresso", 3000, "Coffee", "진한커피"));
@@ -28,57 +29,57 @@ public class CoffeeMenuList {
             System.out.println("=".repeat(10) + "메뉴 리스트" + "=".repeat(10));
             System.out.print("[1]메뉴 보기 [2]메뉴 조회 [3]메뉴 추가 [4]메뉴 삭제 [5]메뉴 수정 [6]종료 : ");
             int selMenu = sc.nextInt();
-            switch (selMenu){
-                case 1 :
+            switch (selMenu) {
+                case 1:
                     //향상된 for문 사용
                     System.out.println("=".repeat(10) + "메뉴 보기" + "=".repeat(10));
-                    for(String e : map.keySet()) {
-                        System.out.println("메뉴 : " + map.get(e).name);
-                        System.out.println("가격 : " + map.get(e).price);
-                        System.out.println("분류 : " + map.get(e).category);
-                        System.out.println("설명 : " + map.get(e).price);
+                    for (String e : map.keySet()) {
+                        System.out.println("메뉴 : " + map.get(e).getName());
+                        System.out.println("가격 : " + map.get(e).getPrice());
+                        System.out.println("분류 : " + map.get(e).getCategory());
+                        System.out.println("설명 : " + map.get(e).getPrice());
                         System.out.println("-".repeat(28));
                     }
                     break;
-                case 2 :
+                case 2:
                     System.out.print("조회 메뉴 입력 : ");
                     key = sc.next();
                     // 포함여부 확인하는 메소드: containsKey(key) : map 내에 해당 키가 있는지 확인하여 결과를 반환
-                    if(map.containsKey(key)) {
-                        System.out.println("메뉴 : " + map.get(key).name);
-                        System.out.println("가격 : " + map.get(key).price);
-                        System.out.println("분류 : " + map.get(key).category);
-                        System.out.println("설명 : " + map.get(key).description);
+                    if (map.containsKey(key)) {
+                        System.out.println("메뉴 : " + map.get(key).getName());
+                        System.out.println("가격 : " + map.get(key).getPrice());
+                        System.out.println("분류 : " + map.get(key).getCategory());
+                        System.out.println("설명 : " + map.get(key).getDescription());
                     } else System.out.println("해당 메뉴가 존재하지 않습니다.");
-                case 3 :
+                case 3:
                     System.out.print("추가 메뉴 입력 : ");
                     key = sc.next();
-                    if(map.containsKey(key)) { //이미 메뉴가 존재하면 추가가 아님
+                    if (map.containsKey(key)) { //이미 메뉴가 존재하면 추가가 아님
                         System.out.println("해당 메뉴가 이미 존재");
                     } else {
                         System.out.print("가격 입력 : ");
                         int price = sc.nextInt();
                         System.out.print("분류 입력 : ");
                         String category = sc.next();//띄어쓰기 있을 수 있어서
-                        sc.nextLine();//아까 왜 오류난거지??
+                        sc.nextLine();
                         System.out.println("설명 입력 : ");
                         String description = sc.nextLine();
                         map.put(key, new MenuInfo(key, price, category, description));
                     }
                     break;
-                case 4 :
+                case 4:
                     System.out.println("삭제할 메뉴를 입력 : ");
                     key = sc.next();
-                    if(map.containsKey(key)){
+                    if (map.containsKey(key)) {
                         map.remove(key);
                         System.out.println(key + "메뉴 삭제 완료");
                     } else {
                         System.out.print("삭제할 메뉴가 없습니다. ");
                     }
-                case 5 :
+                case 5:
                     System.out.print("수정할 메뉴 입력 : ");
                     key = sc.next();
-                    if(map.containsKey(key)) { //이미 메뉴가 존재하면 추가가 아님
+                    if (map.containsKey(key)) { //이미 메뉴가 존재하면 추가가 아님
                         System.out.print("가격 입력 : ");
                         int price = sc.nextInt();
                         System.out.print("분류 입력 : ");
@@ -90,16 +91,32 @@ public class CoffeeMenuList {
                         map.replace(key, new MenuInfo(key, price, category, description));
                     } else {
                         System.out.println("수정할 메뉴가 없음");
-                }
+                    }
                     break;
-                case 6 :
-                    System.out.println("메뉴 종료");
-                    System.exit(0); //해줘도 가능(강제종료) ,return;도 같음
-                default:System.out.println("선택하신 메뉴가 없습니다.");
+                case 6:
+                    System.out.println("메뉴 종료"); // 메뉴종료되면 실행되어야 함.!!! 강제 종료 구문 없애고.
+                    FileOutputStream fos = null;
+                    ObjectOutputStream oos = null;
+                    try {
+                        fos = new FileOutputStream("src/커피메뉴만들기/coffee.bin");
+                        oos = new ObjectOutputStream(fos);
+                        oos.writeObject(map);// 최상단
+                        oos.flush();
+                        oos.close();
+                        fos.close();
+                    } catch (IOException e) {
+                    }
+                    return; //종료해준다. break; 는 안됨. while 안에 있어서
+                default:
+                    System.out.println("선택하신 메뉴가 없습니다.");
             }
         }
     }
 }
+
+
+
+
 
 
 
